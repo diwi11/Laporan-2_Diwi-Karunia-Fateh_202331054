@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            cursor: pointer;
+            color: #0056b3;
+        }
+
+        h3:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003d80;
+        }
+
+        body.messy {
+            font-family: Comic Sans MS, cursive;
+            background-color: #ffcccc;
+            color: #ff00ff;
+        }
+
+        body.messy h1, body.messy h2, body.messy h3 {
+            color: #ff6600;
+            font-style: italic;
+        }
+
+        body.messy #container {
+            background-color: #ffff66;
+            border: 5px dashed #0000ff;
+            padding: 50px;
+        }
+
+        body.messy p {
+            text-align: left; 
+        }
+
+        body.messy button {
+            background-color: #00ff00;
+            color: #000000;
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>LAPORAN TEORI</h1>
+        <h2>Diwi Karunia Fateh | 202331054</h2>
+        
+        <h3 onclick="toggleContent(this)">1. Mengapa menggunakan HTML, CSS dan JavaScript dalam Pemrograman Web?</h3>
+        <ul class="content">
+            <li><strong>HTML (HyperText Markup Language):</strong> Digunakan untuk membangun struktur dasar pada halaman web. Elemen-elemen HTML seperti paragraf, header, tabel, dan form membantu untuk menyusun konten supaya bisa diakses dan dibaca oleh pengguna.</li>
+            <li><strong>CSS (Cascading Style Sheets):</strong> Digunakan untuk memberikan gaya dan tata letak pada halaman web. Dengan CSS, kita bisa mengatur warna, font, margin, padding, dan responsivitas desain, sehingga meningkatkan estetika dan kenyamanan pengguna.</li>
+            <li><strong>JavaScript:</strong> Digunakan untuk membuat halaman web menjadi dinamis dan interaktif. JavaScript memungkinkan fungsi seperti validasi formulir, efek transisi, dan manipulasi DOM yang meningkatkan pengalaman pengguna.</li>
+        </ul>
+
+        <h3 onclick="toggleContent(this)">2. Bagaimana HTML, CSS, dan JavaScript dapat diintegrasikan dalam Pemrograman Web?</h3>
+        <ul class="content">
+            <li><strong>Menghubungkan CSS dengan HTML:</strong>
+                <ul>
+                    <li><strong>Inline CSS:</strong> Ditulis langsung di atribut elemen HTML menggunakan style.</li>
+                    <li><strong>Internal CSS:</strong> Ditulis di dalam tag style pada bagian head halaman HTML.</li>
+                    <li><strong>Eksternal CSS:</strong> Ditempatkan di file terpisah dengan ekstensi .css dan dihubungkan menggunakan tag link.</li>
+                </ul>
+            </li>
+            <li><strong>Menghubungkan JavaScript dengan HTML:</strong>
+                <ul>
+                    <li><strong>Inline JavaScript:</strong> Ditulis langsung di atribut elemen HTML seperti onclick.</li>
+                    <li><strong>Internal JavaScript:</strong> Ditulis di dalam tag script di dalam file HTML.</li>
+                    <li><strong>Eksternal JavaScript:</strong> Ditempatkan di file .js terpisah dan dihubungkan menggunakan tag script.</li>
+                </ul>
+            </li>
+            <li><strong>Interaksi Antara HTML, CSS, dan JavaScript:</strong> JavaScript dapat mengubah elemen HTML dan gaya CSS secara dinamis melalui manipulasi DOM.</li>
+            <li><strong>Responsivitas dan Pengembangan Lanjutan:</strong> Dengan menggunakan kerangka kerja seperti Bootstrap, integrasi ini dapat ditingkatkan untuk menciptakan aplikasi web modern yang responsif.</li>
+        </ul>
+        <h3 onclick="toggleContent(this)">Kesimpulan</h3>
+        <p class="content">HTML, CSS, dan JavaScript merupakan fondasi utama pemrograman web. Ketiganya memungkinkan pengembang untuk membangun situs web yang terstruktur, menarik, dan interaktif. Integrasi yang baik antara ketiga teknologi ini sangat penting untuk menciptakan pengalaman pengguna yang optimal.</p>
+
+        <button id="toggle-theme">Switch Mode</button>
+    </div>
+
+    <script>
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+    
+            if (content.style.display === "none") {
+                if (confirm("Apakah Anda ingin menampilkan konten ini?")) {
+                    content.style.display = "block";
+                }
+            } else {
+                if (confirm("Apakah Anda ingin menyembunyikan konten ini?")) {
+                    content.style.display = "none";
+                }
+            }
+        }
+    
+        document.getElementById("toggle-theme").addEventListener("click", () => {
+            document.body.classList.toggle("messy");
+        });
+    </script>
+    
+</body>
+</html>
